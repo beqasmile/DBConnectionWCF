@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBL
+namespace CarCommon
 {
+    [DataContract]
     public class Car
     {
+        
         private int id;
         private int size;
         private string company;

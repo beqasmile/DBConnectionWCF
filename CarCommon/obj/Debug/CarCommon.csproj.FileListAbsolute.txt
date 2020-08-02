@@ -4,3 +4,8 @@ C:\dev\dayDB\DBConnection\CarCommon\obj\Debug\CarCommon.csprojAssemblyReference.
 C:\dev\dayDB\DBConnection\CarCommon\obj\Debug\CarCommon.csproj.CoreCompileInputs.cache
 C:\dev\dayDB\DBConnection\CarCommon\obj\Debug\CarCommon.dll
 C:\dev\dayDB\DBConnection\CarCommon\obj\Debug\CarCommon.pdb
+C:\dev\dayDBWeb\DBConnection\CarCommon\bin\Debug\CarCommon.dll
+C:\dev\dayDBWeb\DBConnection\CarCommon\bin\Debug\CarCommon.pdb
+C:\dev\dayDBWeb\DBConnection\CarCommon\obj\Debug\CarCommon.csproj.CoreCompileInputs.cache
+C:\dev\dayDBWeb\DBConnection\CarCommon\obj\Debug\CarCommon.dll
+C:\dev\dayDBWeb\DBConnection\CarCommon\obj\Debug\CarCommon.pdb

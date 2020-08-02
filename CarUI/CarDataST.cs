@@ -1,5 +1,4 @@
-﻿using CarBL;
-using CarCommon;
+﻿using CarCommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,17 +16,23 @@ namespace CarUI
         private static CarDataST _instance;
 
         private List<Car> _cars;
+        private List<Driver> _drivers;
 
         private CarDataST ()
         {
             Cars = new List<Car>();
-            CarFactory carFactory;
-            carFactory = new CarFactory();
-            ICarServerLogic carServerLogic = carFactory.CreateCarServerLogic();
-            _cars = carServerLogic.SelectCars();
+            
+            //CarFactory carFactory;
+            //carFactory = new CarFactory();
+            CarDriverNamespace.CarDriverServiceClient carDriverServiceClient = new CarDriverNamespace.CarDriverServiceClient();
+
+            _cars = carDriverServiceClient.SelectCars();
+            DriverNamespace.DriverServerLogicClient driverServerLogicClient = new DriverNamespace.DriverServerLogicClient();
+            _drivers = driverServerLogicClient.SelectDrivers();
         }
 
         public List<Car> Cars { get => _cars; set => _cars = value; }
+        public List<Driver> Drivers { get => _drivers; set => _drivers = value; }
 
         public static CarDataST GetInstance()
         {

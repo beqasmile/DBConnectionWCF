@@ -1,5 +1,4 @@
-﻿using CarBL;
-using CarCommon;
+﻿using CarCommon;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

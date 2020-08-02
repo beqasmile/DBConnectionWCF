@@ -33,9 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CarCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CarCommon\bin\Debug\CarCommon.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +67,16 @@
       <DependentUpon>CarList.cs</DependentUpon>
     </Compile>
     <Compile Include="CarObserver.cs" />
+    <Compile Include="Connected Services\CarDriverNamespace\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\DriverNamespace\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="IObserverNotify.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -89,6 +105,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="CarCommon.Car.datasource" />
+    <None Include="CarCommon.Driver.datasource" />
+    <None Include="Connected Services\CarDriverNamespace\CarDriverService.wsdl" />
+    <None Include="Connected Services\CarDriverNamespace\CarDriverService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CarDriverNamespace\CarDriverService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CarDriverNamespace\CarDriverService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DriverNamespace\DriverService.wsdl" />
+    <None Include="Connected Services\DriverNamespace\DriverService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DriverNamespace\DriverService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DriverNamespace\DriverService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,14 +141,41 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarBL\CarBL.csproj">
-      <Project>{2920dab9-4e3b-43d9-85f1-e9482befb056}</Project>
-      <Name>CarBL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarCommon\CarCommon.csproj">
-      <Project>{ca7552d0-35e4-464f-a1f0-9811d1cb357f}</Project>
-      <Name>CarCommon</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CarDriverNamespace\" />
+    <WCFMetadataStorage Include="Connected Services\DriverNamespace\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CarDriverNamespace\CarDriverService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CarDriverNamespace\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CarDriverNamespace\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CarDriverNamespace\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DriverNamespace\DriverService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DriverNamespace\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DriverNamespace\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DriverNamespace\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
